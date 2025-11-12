@@ -67,7 +67,7 @@
   "scripts": {
     "compile": "hardhat compile",
     "test": "hardhat test",
-    "verify-pool-hash": "CORE_PATH=../v3-core hardhat run scripts/verifyPoolInitCodeHash.ts",
+    "verify-pool-hash": "hardhat run scripts/verifyPoolInitCodeHash.ts",
     "prepublishOnly": "npm run compile"
   }
 }
