@@ -2,8 +2,9 @@
 pragma solidity >=0.5.0;
 
 /// @title Provides functions for deriving a pool address from the factory, tokens, and the fee
+/// @dev JuiceSwap: POOL_INIT_CODE_HASH updated for modified UniswapV3Pool (50% max protocol fee)
 library PoolAddress {
-    bytes32 internal constant POOL_INIT_CODE_HASH = 0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54;
+    bytes32 internal constant POOL_INIT_CODE_HASH = 0x851d77a45b8b9a205fb9f44cb829cceba85282714d2603d601840640628a3da7;
 
     /// @notice The identifying key of the pool
     struct PoolKey {
