@@ -1,1 +1,8 @@
-.github
+artifacts/
+cache/
+node_modules/
+out/
+typechain/
+*.flat.sol
+standard-input.json
+.claude/

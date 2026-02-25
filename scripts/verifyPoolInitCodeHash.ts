@@ -31,9 +31,7 @@ async function main() {
   const poolAddressContent = fs.readFileSync(poolAddressPath, 'utf8')
 
   // Extract the POOL_INIT_CODE_HASH value using regex
-  const hashMatch = poolAddressContent.match(
-    /POOL_INIT_CODE_HASH\s*=\s*(0x[a-fA-F0-9]{64})/
-  )
+  const hashMatch = poolAddressContent.match(/POOL_INIT_CODE_HASH\s*=\s*(0x[a-fA-F0-9]{64})/)
 
   if (!hashMatch) {
     console.error('Error: Could not find POOL_INIT_CODE_HASH in PoolAddress.sol')
