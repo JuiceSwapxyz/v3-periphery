@@ -21,11 +21,10 @@ contract PositionValueTest {
         return PositionValue.principal(nft, tokenId, sqrtRatioX96);
     }
 
-    function fees(INonfungiblePositionManager nft, uint256 tokenId)
-        external
-        view
-        returns (uint256 amount0, uint256 amount1)
-    {
+    function fees(
+        INonfungiblePositionManager nft,
+        uint256 tokenId
+    ) external view returns (uint256 amount0, uint256 amount1) {
         return PositionValue.fees(nft, tokenId);
     }
 

@@ -5,11 +5,10 @@ pragma abicoder v2;
 import '../libraries/OracleLibrary.sol';
 
 contract OracleTest {
-    function consult(address pool, uint32 secondsAgo)
-        public
-        view
-        returns (int24 arithmeticMeanTick, uint128 harmonicMeanLiquidity)
-    {
+    function consult(
+        address pool,
+        uint32 secondsAgo
+    ) public view returns (int24 arithmeticMeanTick, uint128 harmonicMeanLiquidity) {
         return OracleLibrary.consult(pool, secondsAgo);
     }
 
@@ -40,11 +39,9 @@ contract OracleTest {
         return gasBefore - gasleft();
     }
 
-    function getOldestObservationSecondsAgo(address pool)
-        public
-        view
-        returns (uint32 secondsAgo, uint32 currentTimestamp)
-    {
+    function getOldestObservationSecondsAgo(
+        address pool
+    ) public view returns (uint32 secondsAgo, uint32 currentTimestamp) {
         secondsAgo = OracleLibrary.getOldestObservationSecondsAgo(pool);
         currentTimestamp = uint32(block.timestamp);
     }
@@ -53,11 +50,9 @@ contract OracleTest {
         return OracleLibrary.getBlockStartingTickAndLiquidity(pool);
     }
 
-    function getWeightedArithmeticMeanTick(OracleLibrary.WeightedTickData[] memory observations)
-        public
-        pure
-        returns (int24 arithmeticMeanWeightedTick)
-    {
+    function getWeightedArithmeticMeanTick(
+        OracleLibrary.WeightedTickData[] memory observations
+    ) public pure returns (int24 arithmeticMeanWeightedTick) {
         return OracleLibrary.getWeightedArithmeticMeanTick(observations);
     }
 
