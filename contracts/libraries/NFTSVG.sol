@@ -216,7 +216,11 @@ library NFTSVG {
         int24 tickSpacing,
         int8 overRange
     ) private pure returns (string memory svg) {
-        string memory fade = overRange == 1 ? '#fade-up' : overRange == -1 ? '#fade-down' : '#none';
+        string memory fade = overRange == 1
+            ? '#fade-up'
+            : overRange == -1
+                ? '#fade-down'
+                : '#none';
         string memory curve = getCurve(tickLower, tickUpper, tickSpacing);
         svg = string(
             abi.encodePacked(
@@ -241,11 +245,7 @@ library NFTSVG {
         );
     }
 
-    function getCurve(
-        int24 tickLower,
-        int24 tickUpper,
-        int24 tickSpacing
-    ) internal pure returns (string memory curve) {
+    function getCurve(int24 tickLower, int24 tickUpper, int24 tickSpacing) internal pure returns (string memory curve) {
         int24 tickRange = (tickUpper - tickLower) / tickSpacing;
         if (tickRange <= 4) {
             curve = curve1;
